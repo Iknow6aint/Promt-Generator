@@ -7,7 +7,7 @@ import { connectToDB } from '@utils/database';
 const handler = NextAuth({
     providers: [
         GoogleProvider({
-            clientId: process.env.GOOGLE_ID,
+            clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         })
     ],
@@ -40,7 +40,9 @@ const handler = NextAuth({
                 console.log("Error checking if user exists: ", error.message);
                 return false
             }
+
         },
+
     }
 })
 
