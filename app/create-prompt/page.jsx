@@ -8,7 +8,7 @@ const CreatePrompt = () => {
     const router = useRouter();
     const [submitting, setIsSubmitting] = useState(false);
     const [post, setPost] = useState({ prompt: "", tag: "" });
-
+    const { data: session } = useSession()
     const createPrompt = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
